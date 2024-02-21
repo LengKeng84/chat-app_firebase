@@ -1,13 +1,95 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom theme for Tippy */
+/* ---------------------------------------------- */
+/* Tippy */
+.tippy-content {
+  padding: 0px 0px 0px 0px;
+}
+/* Dark */
+.tippy-box[data-theme~="darkCustom"] {
+  background-color: #00c2ab;
+  color: #000;
+}
+
+/* Light */
+.tippy-box[data-theme~="lightCustom"] {
+  background-color: #033e8c;
+  color: #fff;
+}
+
+/* ---------------------------------------------- */
+/* Arrow Tippy */
+/* Dark */
+.tippy-box[data-theme~="darkCustom"][data-placement^="top"]
+  > .tippy-arrow::before {
+  border-top-color: #00c2ab;
+}
+.tippy-box[data-theme~="darkCustom"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  border-bottom-color: #00c2ab;
+}
+.tippy-box[data-theme~="darkCustom"][data-placement^="left"]
+  > .tippy-arrow::before {
+  border-left-color: #00c2ab;
+}
+.tippy-box[data-theme~="darkCustom"][data-placement^="right"]
+  > .tippy-arrow::before {
+  border-right-color: #00c2ab;
+}
+/* Light */
+.tippy-box[data-theme~="lightCustom"][data-placement^="top"]
+  > .tippy-arrow::before {
+  border-top-color: #033e8c;
+}
+.tippy-box[data-theme~="lightCustom"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  border-bottom-color: #033e8c;
+}
+.tippy-box[data-theme~="lightCustom"][data-placement^="left"]
+  > .tippy-arrow::before {
+  border-left-color: #033e8c;
+}
+.tippy-box[data-theme~="lightCustom"][data-placement^="right"]
+  > .tippy-arrow::before {
+  border-right-color: #033e8c;
+}
+/* Silder */
+
+/* ---------------------------------------------- */
+@layer components {
+  .btnNavBar {
+    @apply w-[50px] h-[50px] rounded-xl flex justify-center items-center text-[22px] duration-200 hover:bg-lightPrimary dark:hover:bg-darkPrimary hover:text-[25px] hover:text-whiteCus dark:hover:text-blackCus;
+  }
+
+  .btnChatBoxHeader {
+    @apply w-[35px] h-[35px] text-[20px] border-[1px] text-lightPrimary dark:text-darkPrimary border-lightPrimary dark:border-darkPrimary rounded-md flex justify-center items-center duration-300 hover:bg-lightPrimary dark:hover:bg-darkPrimary hover:text-whiteCus hover:dark:text-blackCus;
+  }
+
+  .btnChatInput {
+    @apply w-[45px] h-[35px] border-[1px] border-lightPrimary dark:border-darkPrimary text-lightPrimary dark:text-darkPrimary rounded-md flex justify-center items-center duration-300 cursor-pointer;
+  }
+
+  .editProfileInput {
+    @apply w-full border-[1px] rounded-md border-lightPrimary dark:border-darkPrimary px-[15px] py-[6px];
+  }
+
+  .logInput {
+    @apply w-full h-[35px] px-3 border-[1px] border-darkLine dark:border-lightLine rounded-md focus:border-lightPrimary dark:focus:border-darkPrimary;
+  }
 }
